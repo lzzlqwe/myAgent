@@ -1,6 +1,12 @@
 spring:
   application:
     name: myAgent
+  ai:
+    dashscope:
+      api-key: sk-8f66e443e769489eaeadb905c7891f75
+      chat:
+        options:
+          model: qwen-plus
 
 server:
   port: 8080
