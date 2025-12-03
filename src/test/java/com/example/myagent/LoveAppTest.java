@@ -1,6 +1,7 @@
 package com.example.myagent;
 
 import com.example.myagent.app.LoveApp;
+import com.example.myagent.pojo.LoveReport;
 import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -29,5 +30,14 @@ public class LoveAppTest {
         message = "我的朋友叫什么来着？刚跟你说过，帮我回忆一下";
         answer = loveApp.doChat(message, chatId);
         Assertions.assertNotNull(answer);
+    }
+
+    @Test
+    void doChatWithReport() {
+        String chatId = UUID.randomUUID().toString();
+
+        String message = "你好，我是程序员迈克，我想让另一半（小美）更爱我，但我不知道该怎么做";
+        LoveReport loveReport = loveApp.doChatWithReport(message, chatId);
+        Assertions.assertNotNull(loveReport);
     }
 }
