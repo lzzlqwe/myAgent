@@ -36,7 +36,7 @@ public class LoveAppDocumentLoader {
             for (Resource resource : resources) {
                 String filename = resource.getFilename();
                 MarkdownDocumentReaderConfig config = MarkdownDocumentReaderConfig.builder()
-                        .withHorizontalRuleCreateDocument(true)
+                        .withHorizontalRuleCreateDocument(true) // 添加段落分隔符
                         .withIncludeCodeBlock(false)
                         .withIncludeBlockquote(false)
                         //添加额外的元信息配置，提取文档的文件名（fileName）作为文档的元信息‌，可以便于后续知识库实现更精确的检索。
