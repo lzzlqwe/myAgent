@@ -4,6 +4,7 @@ import com.example.myagent.advisor.MyLoggerAdvisor;
 import com.example.myagent.advisor.ReReadingAdvisor;
 import com.example.myagent.chatmemory.FileBasedChatMemory;
 import com.example.myagent.pojo.LoveReport;
+import com.example.myagent.rag.QueryRewriter;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
@@ -96,6 +97,9 @@ public class LoveApp {
     @Resource
     private VectorStore pgVectorVectorStore;
 
+    @Resource
+    private QueryRewriter queryRewriter;
+
     /**
      * 和 RAG 知识库进行对话
      * @param message
@@ -103,9 +107,11 @@ public class LoveApp {
      * @return
      */
     public String doChatWithRag(String message, String chatId) {
+        //查询重写
+        String rewriteQuery = queryRewriter.doQueryRewrite(message);
         ChatResponse chatResponse = chatClient
                 .prompt()
-                .user(message)
+                .user(rewriteQuery) //使用重写后的查询
                 .advisors(spec -> spec.param(CHAT_MEMORY_CONVERSATION_ID_KEY, chatId)
                         .param(CHAT_MEMORY_RETRIEVE_SIZE_KEY, 10))
                 // 开启日志，便于观察效果
