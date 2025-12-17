@@ -17,6 +17,8 @@ spring:
     url: jdbc:postgresql://rm-cn-m414kfcca0004teo.rwlb.rds.aliyuncs.com:5432/lzz_ai_agent
     username: lzz_user
     password: Lzzl2289
+search-api:
+  api-key: 2abBfbtrHfdQLfpciw5kFApw
 
 server:
   port: 8080
