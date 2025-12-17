@@ -1,6 +1,5 @@
-package com.example.myagent;
+package com.example.myagent.rag;
 
-import com.example.myagent.rag.MultiQueryExpanderDemo;
 import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

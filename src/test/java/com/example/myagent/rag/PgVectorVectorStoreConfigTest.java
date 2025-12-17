@@ -1,4 +1,4 @@
-package com.example.myagent;
+package com.example.myagent.rag;
 
 import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Assertions;
