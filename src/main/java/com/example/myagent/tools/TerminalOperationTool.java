@@ -14,6 +14,7 @@ public class TerminalOperationTool {
 
     @Tool(description = "Execute a command in the terminal")
     public String executeTerminalCommand(@ToolParam(description = "Command to execute in the terminal") String command) {
+        System.out.println("-------------------- executeTerminalCommand is called -------------------- ");
         StringBuilder output = new StringBuilder();
         try {
             ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", command);

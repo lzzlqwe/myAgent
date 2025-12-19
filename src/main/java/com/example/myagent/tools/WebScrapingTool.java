@@ -13,6 +13,7 @@ public class WebScrapingTool {
 
     @Tool(description = "Scrape the content of a web page")
     public String scrapeWebPage(@ToolParam(description = "URL of the web page to scrape") String url) {
+        System.out.println("-------------------- scrapeWebPage is called -------------------- ");
         try {
             Document document = Jsoup.connect(url).get();
             return document.html();

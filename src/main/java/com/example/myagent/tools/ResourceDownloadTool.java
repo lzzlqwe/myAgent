@@ -15,6 +15,7 @@ public class ResourceDownloadTool {
 
     @Tool(description = "Download a resource from a given URL")
     public String downloadResource(@ToolParam(description = "URL of the resource to download") String url, @ToolParam(description = "Name of the file to save the downloaded resource") String fileName) {
+        System.out.println("-------------------- downloadResource is called -------------------- ");
         String fileDir = FileConstant.FILE_SAVE_DIR + "/download";
         String filePath = fileDir + "/" + fileName;
         try {

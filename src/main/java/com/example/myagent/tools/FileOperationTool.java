@@ -14,6 +14,7 @@ public class FileOperationTool {
 
     @Tool(description = "Read content from a file")
     public String readFile(@ToolParam(description = "Name of a file to read") String fileName) {
+        System.out.println("-------------------- readFile is called ------------------- ");
         String filePath = FILE_DIR + "/" + fileName;
         try {
             return FileUtil.readUtf8String(filePath);
