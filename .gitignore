@@ -35,3 +35,4 @@ build/
 # custom
 /tmp/
 application.yml
+src/main/resources/mcp-servers.json
