@@ -9,6 +9,17 @@
       "env": {
         "AMAP_MAPS_API_KEY": "b1d7a1fec35be6be800b24c13fe231f5"
       }
+    },
+    "lzz-image-search-mcp-server": {
+      "command": "java",
+      "args": [
+        "-Dspring.ai.mcp.server.stdio=true",
+        "-Dspring.main.web-application-type=none",
+        "-Dlogging.pattern.console=",
+        "-jar",
+        "lzz-image-search-mcp/target/lzz-image-search-mcp-0.0.1-SNAPSHOT.jar"
+      ],
+      "env": {}
     }
   }
 }
